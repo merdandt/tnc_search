@@ -117,8 +117,7 @@ def get_media_accounts():
         "instagram": "https://www.instagram.com/nature_org/?hl=en",
         "youtube": "https://www.youtube.com/user/natureconservancy",
         "tiktok": "https://www.tiktok.com/@thenatureconservancy",
-    }
-    
+    }  
     
 def get_website_structure():
     """Returns the structure of TNC's website with the main sections, subsections and external URLs. For more informed decisions and navigation regarding user requests.
@@ -247,8 +246,7 @@ def get_website_structure():
           }
         }
     }   
-     
-    
+       
 def visit_any_web_site(url: str):
     """Visit any website and returns the string (utf-8) representation of the web page under the given URL.
     
@@ -281,8 +279,7 @@ def search_TNC_knowledge_base(query: str):
     
     search_results = tnc.get_search_results(query)
     
-    return search_results
-    
+    return search_results  
    
 def event_search(region: str, key_word: str):
     """Searches for events regarding TNC in a specific region containing a specific keyword.
@@ -298,8 +295,7 @@ def event_search(region: str, key_word: str):
     search_results = tnc.event_search(region, key_word)
     
     return search_results
-    
-    
+      
 def news_search(query: str):
     """Searches for news headlined containing the query key word regarding TNC.
     
