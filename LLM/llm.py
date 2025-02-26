@@ -5,7 +5,6 @@ import os
 import logging
 import time
 import streamlit as st
-from dotenv import load_dotenv
 from openai import OpenAI
 from colorama import Fore, Style, init
 from typing import List, Dict, Any, Optional, Union, Type
