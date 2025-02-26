@@ -24,9 +24,6 @@ from .tools import (
 # Initialize colorama
 init()
 
-# Load environment variables
-load_dotenv()
-
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -68,17 +65,19 @@ class GenerativeAI(metaclass=_SingletonMeta):
         self.debug_mode = debug_mode
         logger.info("Initializing GenerativeAI instance")
         
-        api_key = st.secrets["GEMINI_API_KEY"]
+        # api_key = st.secrets["GEMINI_API_KEY"]
+        api_key = st.secrets["OPENAI_API_KEY"]
         if not api_key:
-            logger.error("GEMINI_API_KEY environment variable is not set")
-            raise ValueError("GEMINI_API_KEY environment variable is not set")
+            logger.error("API_KEY environment variable is not set")
+            raise ValueError("API_KEY environment variable is not set")
         
         self.client = OpenAI(
                         api_key=api_key,
-                        base_url=GEMINI_BASE_URL
+                        # base_url=GEMINI_BASE_URL
                     )
         self.system_message = TNC_SYSTEM_PROMPT
-        self.model = "gemini-1.5-pro"
+        # self.model = "gemini-1.5-pro"
+        self.model = "gpt-4o"
         logger.info(f"Using model: {self.model}")
         
         self.available_tools = TOOLS
